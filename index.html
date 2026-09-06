@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PersonaBot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Sign-in view -->
+  <main id="auth-view" class="auth-view">
+    <div class="auth-card">
+      <p class="wordmark">PersonaBot</p>
+      <h1>Give your assistant a personality, then talk to it.</h1>
+      <p class="auth-copy">Sign in to write your own system instructions and start a private, saved conversation with Gemini.</p>
+      <button id="sign-in-btn" class="btn-primary">Continue with Google</button>
+      <p id="auth-error" class="auth-error" hidden></p>
+    </div>
+  </main>
+
+  <!-- App view -->
+  <div id="app-view" class="app-view" hidden>
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <p class="wordmark">PersonaBot</p>
+        <button id="sign-out-btn" class="btn-ghost">Sign out</button>
+      </div>
+
+      <label class="field-label" for="persona-input">Who should this assistant be?</label>
+      <textarea id="persona-input" placeholder="e.g. You are a blunt, no-nonsense fitness coach who always asks a follow-up question."></textarea>
+      <button id="save-persona-btn" class="btn-secondary">Save persona</button>
+      <p id="persona-status" class="persona-status"></p>
+
+      <div class="sidebar-footer">
+        <p id="user-email" class="user-email"></p>
+      </div>
+    </aside>
+
+    <section class="chat-panel">
+      <div id="messages" class="messages"></div>
+      <form id="chat-form" class="chat-form">
+        <textarea id="chat-input" rows="1" placeholder="Say something…" required></textarea>
+        <button type="submit" class="btn-primary">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
