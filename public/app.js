@@ -3,7 +3,7 @@
 // (Firebase console > Project settings > General > Your apps > SDK setup).
 // ---------------------------------------------------------------------------
 const firebaseConfig = {
-  apiKey: "AIzaSyATiKIDhxFowJtjQl4t90_maK0BR1kmZ3k",
+  apiKey: "AIzaSyATiKIDhxFowJtjQl_maK0BR1kmZ3k",
   authDomain: "project-9b05a57f-3e24-4698-9a2.firebaseapp.com",
   projectId: "project-9b05a57f-3e24-4698-9a2",
   storageBucket: "project-9b05a57f-3e24-4698-9a2.firebasestorage.app",
