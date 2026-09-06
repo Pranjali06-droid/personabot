@@ -113,33 +113,10 @@ personabot/
 
 ---
 
-## Submission helpers
-
-**Brief description (paste into the form):**
-
-> PersonaBot is a user-authenticated AI chatbot deployed on Cloud Run.
-> Users sign in with Firebase Authentication (Google provider), then write
-> their own custom system instructions to shape the assistant's persona.
-> Every message and reply is stored per-user in Firestore
-> (`/users/{uid}/messages`, `/users/{uid}/settings/persona`), so
-> conversations and persona settings are private and isolated to each
-> account. The backend calls the Gemini API in a multi-turn `startChat()`
-> session, passing the user's saved instructions as the system prompt and
-> their prior messages as history, so the assistant stays in character
-> across turns. The Gemini API key is never hardcoded — it's stored in
-> Google Cloud Secret Manager and fetched by the Cloud Run service at
-> startup. The whole app is a single containerized Express service built
-> and deployed straight from source to Cloud Run.
-
-**Services utilized (check all in the form):**
+**Services utilized :**
 - User authentication via Firebase ✅
 - Multi-turn interaction with the Gemini API ✅
 - User-isolated Firestore document storage ✅
 - Secure API key retrieval via Google Cloud Secret Manager ✅
 
-**Sample social post (remember the hashtag):**
 
-> Built PersonaBot for the #AccelerateAIwithCloudRun challenge 🤖 — sign in,
-> write your own AI persona, and chat with Gemini. Firebase Auth +
-> Firestore + Secret Manager + Cloud Run, deployed straight from source.
-> [deployment link] [repo link]
