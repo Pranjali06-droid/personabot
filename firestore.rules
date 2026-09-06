@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // All app data lives under /users/{uid}/... .
+    // The Cloud Run backend uses the Admin SDK (which bypasses these rules)
+    // after verifying each request's Firebase ID token, so every read/write
+    // is already scoped to req.uid server-side. These rules are kept as a
+    // defense-in-depth backstop in case a client ever talks to Firestore
+    // directly, ensuring a user can only ever touch their own documents.
+    match /users/{userId}/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
